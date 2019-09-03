@@ -6,6 +6,8 @@ Engage JS Http Client Axios is just a simple http client you can  use with our E
 
 This code is written in ES6+ and uses a lot of newer features, transpiling and compiling are up to you.
 
+See our Engage API for usage:
+https://github.com/thaoms/engage-js-api
 
 ## Installation
 
@@ -18,44 +20,7 @@ We recommend installing with the `--only=prod` flag if you don't want any of the
 ## Usage with our API
 
 ```javascript
-import EngageApi from "@thaoms/engage-js-api";
 import HttpClientAxios from "@thaoms/engage-js-httpclient-axios";
-
-/* Step 1 */
-const authorizationUrl = EngageApi.getAuthorizationUrl({
-    clientId: 'client_id',
-    scope: 'accounts_read accounts_write',
-});
-
-/* handle request and response */
-/* ... */
-
-/* Step 2 */
-const tokenUrl = EngageApi.getAuthorizationTokenUrl({
-    clientId: 'client_id',
-    clientSecret: 'client_secret',
-    code: 'code_you_got_from_step1',
-});
-
-/* handle request response */
-/* ... */
-
-const engageApi = new EngageApi(
-    new HttpClientAxios({
-        headers: {},
-    }),
-    'access_token_you_got_from_step2'
-);
-
-/** see the developers docs for available endpoints, 
-params and more  **/
-
-engageApi.getUsersForAccount('account_id', 20)
-    .then((result) => {
-        console.log(result);
-    }).catch((e) => {
-        console.log(e);
-    });
 ```
 
 ## Docs
