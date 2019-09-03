@@ -18,10 +18,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/engagor/engage-http-client-axios.git"
+    "url": "https://github.com/thaoms/engage-js-httpclient-axios.git"
   },
   "bugs": {
-    "url": "https://github.com/engagor/engage-http-client-axios/issues"
+    "url": "https://github.com/thaoms/engage-js-httpclient-axios/issues"
   },
   "author": "Thomas Van Kerckvoorde <thomas.vankerckvoorde@clarabridge.com>",
   "license": "BSD-2-Clause",
