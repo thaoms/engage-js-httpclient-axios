@@ -13,7 +13,7 @@ class HttpClientAxios {
      */
     defaultHeaders = {};
     /**
-     * @type {object}
+     * @type {function}
      * @inner
      * @memberOf HttpClientAxios
      */
@@ -53,16 +53,14 @@ class HttpClientAxios {
             headers: headers ? headers : null,
             data: body ? JSON.stringify(body) : null,
         }).then((response) => {
-            return new Promise((resolve) => {
-                const cleanResponse = {};
+            const cleanResponse = {};
 
-                cleanResponse.data = response.data;
-                cleanResponse.status = response.status;
-                cleanResponse.statusText = response.statusText;
-                cleanResponse.headers = response.headers;
+            cleanResponse.data = response.data;
+            cleanResponse.status = response.status;
+            cleanResponse.statusText = response.statusText;
+            cleanResponse.headers = response.headers;
 
-                resolve(cleanResponse);
-            });
+            return cleanResponse;
         })
         .catch((error) => {
             console.log(error);

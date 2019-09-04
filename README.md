@@ -7,7 +7,7 @@ Engage JS Http Client Axios is just a simple http client you can  use with our E
 This code is written in ES6+ and uses a lot of newer features, transpiling and compiling are up to you.
 
 See our Engage API for usage:
-https://github.com/thaoms/engage-js-api
+https://github.com/thaoms/engage-js-api 
 
 ## Installation
 
