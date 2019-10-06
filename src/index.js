@@ -52,19 +52,20 @@ class HttpClientAxios {
             url: url,
             headers: headers ? headers : null,
             data: body ? JSON.stringify(body) : null,
-        }).then((response) => {
-            const cleanResponse = {};
-
-            cleanResponse.data = response.data;
-            cleanResponse.status = response.status;
-            cleanResponse.statusText = response.statusText;
-            cleanResponse.headers = response.headers;
-
-            return cleanResponse;
         })
-        .catch((error) => {
-            console.log(error);
-        });
+            .then((response) => {
+                const cleanResponse = {};
+
+                cleanResponse.data = response.data;
+                cleanResponse.status = response.status;
+                cleanResponse.statusText = response.statusText;
+                cleanResponse.headers = response.headers;
+
+                return cleanResponse;
+            })
+            .catch((error) => {
+                console.error(error);
+            });
     };
 }
 
