@@ -10,10 +10,8 @@ https://github.com/thaoms/engage-js-api
 ## Installation
 
 ```bash
-npm install @thaoms/engage-js-httpclient-axios --only=prod
+npm install @thaoms/engage-js-httpclient-axios
 ```
-
-We recommend installing with the `--only=prod` flag if you don't want any of the development dependencies.
 
 ## Usage with our API
 
