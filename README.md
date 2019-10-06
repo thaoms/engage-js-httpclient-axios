@@ -1,5 +1,3 @@
-This library is a work in progress.
-
 # engage-js-httpclient-axios
 
 Engage JS Http Client Axios is just a simple http client you can  use with our Engage JS API
