@@ -18,7 +18,11 @@ We recommend installing with the `--only=prod` flag if you don't want any of the
 ## Usage with our API
 
 ```javascript
+/** CJS (transpiled version) **/
 import HttpClientAxios from "@thaoms/engage-js-httpclient-axios";
+
+/** Recommended (ES6 version, up to your build process) **/
+import HttpClientAxios from "@thaoms/engage-js-httpclient-axios/src";
 ```
 
 ## Docs
