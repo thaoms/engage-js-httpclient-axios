@@ -7,25 +7,12 @@ import axios from 'axios';
  */
 class HttpClientAxios {
     /**
-     * @type {object}
-     * @inner
-     * @memberOf HttpClientAxios
-     */
-    defaultHeaders = {};
-    /**
-     * @type {function}
-     * @inner
-     * @memberOf HttpClientAxios
-     */
-    httpClientInstance = {};
-
-    /**
      * HttpClient Axios
      * @constructor
      * @param {object} [props=null]
      * @returns AxiosInstance
      */
-    constructor(props) {
+    constructor() {
         this.httpClientInstance = axios.create();
     }
 
