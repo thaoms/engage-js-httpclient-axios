@@ -69,31 +69,15 @@ function _defineProperty(obj, key, value) {
 
 var HttpClientAxios =
 /**
- * @type {object}
- * @inner
- * @memberOf HttpClientAxios
- */
-
-/**
- * @type {function}
- * @inner
- * @memberOf HttpClientAxios
- */
-
-/**
  * HttpClient Axios
  * @constructor
  * @param {object} [props=null]
  * @returns AxiosInstance
  */
-function HttpClientAxios(props) {
+function HttpClientAxios() {
   var _this = this;
 
   _classCallCheck(this, HttpClientAxios);
-
-  _defineProperty(this, "defaultHeaders", {});
-
-  _defineProperty(this, "httpClientInstance", {});
 
   _defineProperty(this, "request",
   /*#__PURE__*/
@@ -150,10 +134,7 @@ function HttpClientAxios(props) {
     };
   }());
 
-  this.httpClientInstance = axios.create({
-    baseURL: props.baseUrl,
-    headers: props.headers ? props.headers : this.defaultHeaders
-  });
+  this.httpClientInstance = axios.create();
 }
 /**
  * This request method will be inherited in the EngageApi Class, so it's used for every request.
