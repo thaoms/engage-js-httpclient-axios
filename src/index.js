@@ -26,10 +26,7 @@ class HttpClientAxios {
      * @returns AxiosInstance
      */
     constructor(props) {
-        this.httpClientInstance = axios.create({
-            baseURL: props.baseUrl,
-            headers: props.headers ? props.headers : this.defaultHeaders,
-        });
+        this.httpClientInstance = axios.create();
     }
 
     /**
