@@ -22,7 +22,7 @@ class HttpClientAxios {
     /**
      * HttpClient Axios
      * @constructor
-     * @param {object} props
+     * @param {object} [props=null]
      * @returns AxiosInstance
      */
     constructor(props) {
