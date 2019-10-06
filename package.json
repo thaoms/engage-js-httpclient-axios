@@ -14,7 +14,10 @@
     "test-run": "babel-node index.js",
     "prettier": "prettier --check ./src/**",
     "lint": "eslint ./src --ext .js",
-    "lint-fix": "npm lint --fix"
+    "lint-fix": "npm lint --fix",
+    "upgrade-interactive": "ncu",
+    "update-packages": "ncu -u",
+    "release": "npm version minor && npm publish && git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -31,16 +34,17 @@
     "minami": "^1.2.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/node": "^7.5.5",
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-env": "^7.6.2",
     "core-js": "3",
-    "eslint": "^6.2.2",
-    "eslint-config-prettier": "^6.1.0",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "npm-check-updates": "^3.1.23",
     "prettier": "1.18.2"
   },
   "babel": {
