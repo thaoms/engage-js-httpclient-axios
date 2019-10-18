@@ -3,6 +3,7 @@
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var axios = _interopDefault(require('axios'));
+var url = require('url');
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -84,10 +85,11 @@ function HttpClientAxios() {
   function () {
     var _ref = _asyncToGenerator(
     /*#__PURE__*/
-    regeneratorRuntime.mark(function _callee(url) {
+    regeneratorRuntime.mark(function _callee(url$1) {
       var method,
           headers,
           body,
+          bodyFormatted,
           _args = arguments;
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
@@ -97,7 +99,7 @@ function HttpClientAxios() {
               headers = _args.length > 2 && _args[2] !== undefined ? _args[2] : null;
               body = _args.length > 3 && _args[3] !== undefined ? _args[3] : null;
 
-              if (url) {
+              if (url$1) {
                 _context.next = 5;
                 break;
               }
@@ -105,11 +107,14 @@ function HttpClientAxios() {
               throw 'Please define the url for your request.';
 
             case 5:
+              // This can be removed when we support raw JSON bodies as request in our API.
+              bodyFormatted = new url.URLSearchParams(body); // -------- //
+
               return _context.abrupt("return", _this.httpClientInstance({
                 method: method,
-                url: url,
+                url: url$1,
                 headers: headers ? headers : null,
-                data: body ? JSON.stringify(body) : null
+                data: body ? bodyFormatted : null
               }).then(function (response) {
                 var cleanResponse = {};
                 cleanResponse.data = response.data;
@@ -121,7 +126,7 @@ function HttpClientAxios() {
                 console.error(error);
               }));
 
-            case 6:
+            case 7:
             case "end":
               return _context.stop();
           }

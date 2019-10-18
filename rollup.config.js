@@ -6,7 +6,7 @@ module.exports = {
         file: './dist/index.js',
         format: 'cjs'
     },
-    external: ['axios'],
+    external: ['axios', 'url'],
     plugins: [
         babel({
             exclude: 'node_modules/**',

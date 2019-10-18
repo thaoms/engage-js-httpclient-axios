@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { URLSearchParams } from 'url';
 
 /**
  * HttpClientAxios Class
@@ -31,11 +32,15 @@ class HttpClientAxios {
             throw 'Please define the url for your request.';
         }
 
+        // This can be removed when we support raw JSON bodies as request in our API.
+        let bodyFormatted = new URLSearchParams(body);
+        // -------- //
+
         return this.httpClientInstance({
             method: method,
             url: url,
             headers: headers ? headers : null,
-            data: body ? JSON.stringify(body) : null,
+            data: body ? bodyFormatted : null,
         })
             .then((response) => {
                 const cleanResponse = {};
